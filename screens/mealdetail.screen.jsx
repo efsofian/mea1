@@ -10,6 +10,7 @@ import { useLayoutEffect } from "react";
 import MealDetail from "../components/mealdetail.component";
 import Subtitle from "../components/MealDetail/subtitle.component";
 import List from "../components/MealDetail/list.component";
+import IconButton from "../components/iconbutton.component";
 import { MEALS } from "../data/dummy-data";
 
 const MealDetailScreen = ({ route, navigation }) => {
@@ -22,7 +23,11 @@ const MealDetailScreen = ({ route, navigation }) => {
 	useLayoutEffect(() => {
 		navigation.setOptions({
 			headerRight: () => (
-				<Button title="Tap me" onPress={headerButtonPressHandler} />
+				<IconButton
+					onPress={headerButtonPressHandler}
+					icon="star"
+					color="white"
+				/>
 			),
 		});
 	}, [navigation, headerButtonPressHandler]);

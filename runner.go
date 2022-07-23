@@ -253,3 +253,34 @@ ou dynamiquement via
 navigation.setOptions({
     headerRight: xxx
 })
+
+
+Navigation Drawer: // genre de side bar avec tte les screens
+npm install @react-navigation/drawer
+expo install react-native-gesture-handler react-native-reanimated
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+const Drawer = createDrawerNavigator();
+
+<NavigationContainer>
+    <Drawer.Navigator screenOptions={} initialRouteName={}>
+        <Drawer.Screen name="xx" component={CompRef}/>
+    </Drawer.Navigator>
+</NavigationContainer>
+=> pour faire apparaitre le menu: navigation.toggleDrawer();
+
+Navigation Tabs: // bottom (icons list bottom) or top (icons list top)
+npm install @react-navigation/bottom-tabs
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+const Tab = createBottomTabNavigator();
+<NavigationContainer>
+    <Tab.Navigator screenOptions={} initialRouteName={}>
+        <Tab.Screen name="xx" component={CompRef}/>
+    </Tab.Navigator>
+</NavigationContainer>
+
+options={{
+    headerShown: false // dont display menu
+}}
+
+sceneContainerStyle => drawer // contentStyle => stack
