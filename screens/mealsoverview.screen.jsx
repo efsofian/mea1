@@ -1,5 +1,5 @@
 import { View, StyleSheet, Text, FlatList } from "react-native";
-import MealItem from "../components/MealItem";
+import MealItem from "../components/mealitem.component";
 import { MEALS } from "../data/dummy-data";
 
 const MealsOverviewScreen = ({ route }) => {
