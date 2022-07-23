@@ -284,3 +284,8 @@ options={{
 }}
 
 sceneContainerStyle => drawer // contentStyle => stack
+
+State for data between screen
+react-context
+redux
+
