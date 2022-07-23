@@ -217,3 +217,39 @@ navigation.navigate('screenXX', context); // le context est extractable via { ro
 on peut aussi utiliser le hook { useNavigation } from '@react-navigation/native';
 const navigation = useNavigation(); // hook style  pratique on nested component to avoid navigation props drilling
 const route = useRoute(); // hook style, pratique on nested component to avoid route props drilling
+
+setting navigations option dynamically:
+-au niveau des stacks:
+Stack.Screen
+options={({ route, navigation }) => {
+    const catId = route.params.categoryId;
+    return {
+        title: catId,
+    };
+}}} // peut prendre une fn
+ou
+-dans la screen
+useLayoutEffect(() => {
+    navigation.setOptions({
+        title: categoryTitle,
+    });
+}, [categoryTitle]);
+
+reminder:
+FlatList => good for long list
+regular list is ok for items
+
+Navigation:
+Header Button:
+Stack.Screen options={{
+    headerLeft: () => {
+        return jsx
+    },
+    headerRight: () => {
+        return jsx
+    }
+}}
+ou dynamiquement via
+navigation.setOptions({
+    headerRight: xxx
+})
